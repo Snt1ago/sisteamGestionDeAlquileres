@@ -4,46 +4,25 @@ namespace Leandro\app\modelo;
 
 class Persona
 {
+  private $id;
   private $nombre;
-  private $apellido;
-  private $edad;
 
-  public function __construct($nombre = "", $apellido = "", $edad = "")
+  public function __construct($nombre = "", $id = "")
   {
+    $this->id = $id;
     $this->nombre = $nombre;
-    $this->apellido = $apellido;
-    $this->edad = $edad;
   }
 
   public function listar()
   {
-    $lista[] = new Persona("Diego", "Forlan", 45);
-    $lista[] = new Persona("Ana", "Clara", 22);
-    $lista[] = new Persona("Lucas", "Paqueta", 78);
+    $lista[] = new Persona(1, "Forlan");
+    $lista[] = new Persona(2, "Clara");
+    $lista[] = new Persona(3, "Paqueta");
     return $lista;
   }
 
-  /**
-   * Get the value of nombre
-   */
   public function getNombre()
   {
     return $this->nombre;
-  }
-
-  /**
-   * Get the value of apellido
-   */
-  public function getApellido()
-  {
-    return $this->apellido;
-  }
-
-  /**
-   * Get the value of edad
-   */
-  public function getEdad()
-  {
-    return $this->edad;
   }
 }
